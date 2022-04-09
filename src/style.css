@@ -1,3 +1,140 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin:0;
+    max-height: 100%;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    border: 2px solid turquoise;
+    min-width: 400px;
+    max-width: 400px;
+    padding: 35px;
+    gap: 20px;
+    box-shadow: 10px black;
+}
+
+.score {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    font-size: 20px;
+}
+
+.circle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    color: turquoise;
+}
+
+.x {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    color: blue;
+}
+
+.draw-count {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    color: rgb(94, 94, 94)
+}
+
+#board {
+    width: 50vw;
+    height: 50vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(3, auto);
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border: 1px solid grey;
+}
+
+.cell:first-child,
+.cell:nth-child(4),
+.cell:nth-child(7) {border-left: none;}
+
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3) {border-top: none;}
+
+.cell:nth-child(3),
+.cell:nth-child(6),
+.cell:nth-child(9) {border-right: none;}
+
+.cell:last-child,
+.cell:nth-child(7),
+.cell:nth-child(8) {border-bottom: none;}
+
+.cell:hover {
+    background-color: rgb(177, 177, 177);
+    padding: auto;
+    cursor: pointer;
+    content: none;
+}
+
+.turn {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    border: 1px solid black;
+    border-radius: 50px;
+    padding: 5 10 5 10px;
+}
+
+.extras {
+    margin-top: 30;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    color: grey;
+}
+
+.restart {
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    
+}
+
+.player-count {
+    font-size: 15px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 60px;
+}
+
+#restart {
+    font-size: 30px;
+}
+
+.settings {
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+}
+
+#settings {
+    font-size: 30px;
+}
