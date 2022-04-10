@@ -94,6 +94,23 @@
     content: none;
 }
 
+.addxx {
+    color: blue;
+    font-size: 55px;
+    cursor: default;
+}
+
+.addcirclee {
+    color: turquoise;
+    font-size: 55px;
+    cursor: default;
+}
+
+.cell:hover >
+.addcirclee {
+    background-color: white;
+}
+
 .turn {
     display: flex;
     flex-direction: row;
