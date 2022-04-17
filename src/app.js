@@ -1,24 +1,13 @@
 // VARIABLES
 
-const circleWins = document.getElementById('#circle-wins');
-const xWins = document.getElementById('#x-wins');
-const drawCount = document.getElementById('#draws');
-const cellOne = document.getElementById('#0');
-const cellTwo = document.getElementById('#1');
-const cellThree = document.getElementById('#2');
-const cellFour = document.getElementById('#3');
-const cellFive = document.getElementById('#4');
-const cellSix = document.getElementById('#5');
-const cellSeven = document.getElementById('#6');
-const cellEight = document.getElementById('#7');
-const cellNine = document.getElementById('#8');
-const cellElements = document.querySelectorAll('.cell');
-const turn = document.getElementById('#turn');
-const xDisplay = document.getElementById('#x-turn');
-const circleDisplay = document.getElementById('#circle-turn');
+const circleWinsElem = document.getElementById('circle-wins');
+const xWinsElem = document.getElementById('x-wins');
+const drawCountElem = document.getElementById('draws');
+const boardElem = document.getElementById('board');
 
-const xPlayer = 'X';
-const circlePlayer = 'O';
+const turn = document.getElementById('turn');
+const xDisplay = document.getElementById('x-turn');
+const circleDisplay = document.getElementById('circle-turn');
 
 // STATE
 
@@ -26,17 +15,8 @@ const state = {
   circleWins: 0,
   xWins: 0,
   drawCount: 0,
-  board: {
-    0: '',
-    1: '',
-    2: '',
-    3: '',
-    4: '',
-    5: '',
-    6: '',
-    7: '',
-    8: '',
-  },
+  board: ['', '', '', '', '', '', '', '', ''],
+  currentPlayer: 'X',
 };
 
 const winningCombination = [
@@ -70,24 +50,31 @@ function addCircle(e) {
   cell.appendChild(addcirclee);
 }
 
-cellElements.forEach((cell, index) => {
-  cell.addEventListener('click', addX, { once: true });
-});
-
 function clear(element) {
   element.innerHTML = '';
 }
 
-function render(state) {
-  clear(appElement);
+function nextMove(cell) {
+  state.board[cell] = state.currentPlayer;
+  state.currentPlayer = state.currentPlayer === 'X' ? 'O' : 'X';
+  console.log(state);
 }
 
-// X - CIRCLE CREATION
-// EACH CELL TO BE CLICKABLE ONE TIME AND REGISTER THE SYMBOL
-// SWAP PLAYER EACH TURN
-// WINNING COMBINATIONS, IF NOT THEN RESTART GAME
-// ROUND WINNER WHEN WIN COMB=> STATE.WINNER++ UNTIL 5 WINS WHERE IT ENDS (AND RESTART)
-// RESTART GAME VIA BUTTON OR WHEN 5 WINS
+function render(state) {
+  circleWinsElem.innerText = `${state.circleWins} wins`;
+  xWinsElem.innerText = `${state.xWins} wins`;
+  drawCountElem.innerText = `${state.drawCount} draws`;
+
+  clear(boardElem);
+  state.board.forEach((_, index) => {
+    const cellElement = document.createElement('div');
+    cellElement.classList.add('cell');
+    cellElement.addEventListener('click', () => nextMove(index));
+    boardElem.appendChild(cellElement);
+  });
+}
+
+render(state);
 
 /*
 
