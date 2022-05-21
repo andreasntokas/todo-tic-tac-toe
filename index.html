@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic-Tac-Toe</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="project" id="project">
+      <div class="app">
+        <div class="score">
+          <div class="circle">
+            <h3><i class="fa-solid fa-o" id="circle-fa"></i></h3>
+            <h3 id="circle-wins">0 wins</h3>
+          </div>
+          <div class="x">
+            <h3><i class="fa-solid fa-x" id="x-fa"></i></h3>
+            <h3 id="x-wins">0 wins</h3>
+          </div>
+          <div class="draw-count">
+            <h3>
+              <i class="fa-solid fa-scale-balanced" id="draw-fa"></i>
+            </h3>
+            <h3 id="draws">0 draws</h3>
+          </div>
+        </div>
+        <div class="board" id="board"></div>
+        <div id="displayCurrentPlayer">
+          <!-- h3>
+            <i class="fa-solid fa-x" id="x-turn"></i>
+          </h3>
+          <h3>
+            <i class="fa-solid fa-o" id="circle-turn"></i>
+          </h3 -->
+        </div>
+
+        <div class="extras">
+          <div class="outer-border">
+            <button class="refresh">
+              <i class="fa-solid fa-rotate" id="refresh"></i>
+            </button>
+          </div>
+          <h3 class="player-count">1 PLAYER</h3>
+          <div class="outer-border">
+            <button class="settings">
+              <i class="fa-solid fa-gear" id="settings"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>
