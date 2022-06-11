@@ -167,6 +167,64 @@ body::after {
     cursor: default;
 }
 
+#current-turn-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    margin-bottom: 40px;
+    height: 35px;
+    border: 1px solid var(--border);
+}
+
+.xTurnActive {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 11px;
+    font-size: 20px;
+    width: 22px;
+    height: 22px;
+    border-radius: 9999px;
+    color: white;
+    background-color: var(--xcolor);
+}
+
+.oTurnActive {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 11px;
+    font-size: 20px;
+    width: 22px;
+    height: 22px;
+    border-radius: 9999px;
+    color: white;
+    background-color: var(--circlecolor);
+}
+
+.xTurn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 11px;
+    font-size: 20px;
+    width: 22px;
+    height: 22px;
+    color: var(--xcolor);
+}
+
+.oTurn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 11px;
+    font-size: 20px;
+    width: 22px;
+    height: 22px;
+    color: var(--circlecolor);
+}
+
 .display-winner-x {
     display: flex;
     justify-content: center;
